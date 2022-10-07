@@ -7,16 +7,17 @@ entrada.addEventListener("keyup", function prueba(event) {
         li.innerHTML = `<span><i class="fa fa-trash"></i></span>` + entrada.value;
         lista.appendChild(li)
         entrada.value = "";
-        i = document.querySelectorAll("i")
+        eliminar();
     }
 });
-document.getElementById("container").addEventListener("click", () => {
-    i = document.querySelectorAll("i")
-    i.forEach(Element => {
-        Element.addEventListener("click", (e) => {
-            let li = Element.parentNode.parentNode;
-            li.parentNode.removeChild(li);
-        })
+function eliminar(){
+i = document.querySelectorAll("i")
+i.forEach(Element => {
+    Element.addEventListener("click", (e) => {
+        let li = Element.parentNode.parentNode;
+        li.parentNode.removeChild(li);
     })
 })
+}
 
+eliminar();
